@@ -44,12 +44,12 @@
 	</servlet-mapping>
 	
 		<servlet>
-		<servlet-name>loginform</servlet-name>
+		<servlet-name>loginForm</servlet-name>
 		<servlet-class>example.LoginformServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>loginform</servlet-name>
+		<servlet-name>loginForm</servlet-name>
 		<url-pattern>/login-form.do</url-pattern>
 	</servlet-mapping>
 	
