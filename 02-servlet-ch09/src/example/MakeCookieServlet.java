@@ -25,7 +25,7 @@ public class MakeCookieServlet extends HttpServlet{
 		
 		//쿠키 객체 생성 > name이라는 key에 encodeName 값을 저장
 		Cookie cookie = new Cookie("name", encodeName);
-		//cookie.setMaxAge(60*60*1000);		//쿠키의 저장기간 설정(1시간동안 저장(ms단위))(보안 강화를 위해 설정)
+		//cookie.setMaxAge(60*60*1000);		//쿠키의 저장기간 설정(1시간동안 저장(초단위))(보안 강화를 위해 설정)
 		
 		//만든 쿠키를 쿠키목록에 추가
 		resp.addCookie(cookie);
