@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<servlet>
+		<servlet-name>sessionInfo</servlet-name>
+		<servlet-class>example.session.SessionInfoServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sessionInfo</servlet-name>
+		<url-pattern>/session-info.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>sessionLogin</servlet-name>
+		<servlet-class>example.member.SessionLoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sessionLogin</servlet-name>
+		<url-pattern>/member/session-login.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>sessionLoginForm</servlet-name>
+		<servlet-class>example.member.SessionLoginformServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sessionLoginForm</servlet-name>
+		<url-pattern>/session-login-form.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>sessionLogincheck</servlet-name>
+		<servlet-class>example.member.SessionLoginCheckServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sessionLogincheck</servlet-name>
+		<url-pattern>/member/session-login-check.do</url-pattern>
+	</servlet-mapping>
+	
+	
+		<servlet>
+		<servlet-name>sessionLogout</servlet-name>
+		<servlet-class>example.member.SessionLogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sessionLogout</servlet-name>
+		<url-pattern>/member/session-logout.do</url-pattern>
+	</servlet-mapping>
+</web-app>
