@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<servlet>
+		<servlet-name>makeCookie</servlet-name>
+		<servlet-class>example.MakeCookieServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>makeCookie</servlet-name>
+		<url-pattern>/make-cookie.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>viewCookies</servlet-name>
+		<servlet-class>example.ViewCookiesServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>viewCookies</servlet-name>
+		<url-pattern>/view-cookies.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>modifyCookie</servlet-name>
+		<servlet-class>example.ModifyCookieServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>modifyCookie</servlet-name>
+		<url-pattern>/modify-cookie.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>deleteCookie</servlet-name>
+		<servlet-class>example.DeleteCookieServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>deleteCookie</servlet-name>
+		<url-pattern>/delete-cookie.do</url-pattern>
+	</servlet-mapping>
+</web-app>
