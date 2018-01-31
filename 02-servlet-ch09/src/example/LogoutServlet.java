@@ -14,7 +14,7 @@ public class LogoutServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		resp.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html; charset = utf-8");
 		
 		//쿠키삭제 ->로그아웃

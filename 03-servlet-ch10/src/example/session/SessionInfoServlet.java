@@ -15,7 +15,7 @@ public class SessionInfoServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		resp.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html; charset = utf-8");
 		
 		// 현재 시간을 가져오기 위해서 생성

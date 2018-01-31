@@ -15,7 +15,7 @@ public class SessionLoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		resp.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html; charset=utf-8");
 		
 		//클라이언트에서 POST방식으로 전달받은 id와 password값을 String변수에 저장한다.

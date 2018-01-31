@@ -18,7 +18,7 @@ public class MakeCookieServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		resp.setContentType("text/html; charset = utf-8");
-		resp.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("utf-8");
 		
 		//"최범균" 문자열을 URL 형식으로 변경하는데 utf-8인코딩을 사용하겠다는 뜻
 		String encodeName = URLEncoder.encode("최범균","utf-8");

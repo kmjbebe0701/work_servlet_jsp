@@ -18,7 +18,7 @@ public class ModifyCookieServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		resp.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html; charset = utf-8");
 		
 		//클라이언트에 저장된 쿠키배열을 가져온다.

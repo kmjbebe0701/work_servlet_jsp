@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.1">
 	<servlet>
 		<servlet-name>loginForm</servlet-name>
-		<servlet-class>example.LoginformServlet</servlet-class>
+		<servlet-class>filter.LoginformServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -15,13 +15,28 @@
 
 	<servlet>
 		<servlet-name>login</servlet-name>
-		<servlet-class>example.LoginServlet</servlet-class>
+		<servlet-class>filter.LoginServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>login</servlet-name>
 		<url-pattern>/member/login.do</url-pattern>
 	</servlet-mapping>
+	<!-- 필터는 순서가 있다 (CharacterEncodingFilter, loginCheckFilter순으로 실행 -->
+	<filter>
+	<filter-name>encodingFilter</filter-name>
+	<filter-class>util.CharacterEncodingFilter</filter-class>
+	<!-- 초기 key와 value를 설정 -->
+	<init-param>
+		<param-name>encoding</param-name>	<!-- key -->
+		<param-value>utf-8</param-value>	<!-- value -->
+	</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>			<!-- 모든 페이지에 인코딩 설정을 적용 -->
+	</filter-mapping>
 	
 	
 	<!--  p.559 -->

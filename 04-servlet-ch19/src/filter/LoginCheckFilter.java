@@ -29,6 +29,7 @@ public class LoginCheckFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) 
 			throws IOException, ServletException {
+		System.out.println("로그인 체크 필터 들어감");
 		
 		//HttpServletRequest의 기능을 사용하기 위한 다운캐스팅 (getSession 메소드)
 		HttpServletRequest httpReq = (HttpServletRequest) req;
@@ -56,7 +57,7 @@ public class LoginCheckFilter implements Filter{
 			System.out.println("필터 처리 끝난 후 서버의 응답이 빠져나감");
 		}
 		else {
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/loginForm.jsp");
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/login-form.do");
 			dispatcher.forward(req, resp);
 		}
 	}
