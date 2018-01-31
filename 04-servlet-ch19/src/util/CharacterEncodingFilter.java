@@ -31,6 +31,8 @@ public class CharacterEncodingFilter implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
 			throws IOException, ServletException {
 		System.out.println("인코딩 필터 들어감");
+		
+		// 이 필터의 기능은 클라이언트로부터 요청받은 내용의 인코딩을 변경하는 작업
 		req.setCharacterEncoding(encoding);
 		chain.doFilter(req, resp);				//------기준으로 위 아래, 들어오고 나가고
 		System.out.println("인코딩 필터에서 빠져나감");
