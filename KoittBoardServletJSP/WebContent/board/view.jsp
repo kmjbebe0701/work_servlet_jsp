@@ -2,9 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	<!-- JSTL 사용 -->
 <!DOCTYPE html>
 <html>
-<head>
-<title>글 상세보기</title>
-</head>
+<head><title>글 상세보기</title></head>
 <body>
 	<table>
 		<tbody>
@@ -31,8 +29,18 @@
 		</tbody>
 	</table>
 	
-	<a href="<c:url value='/board/delete-confirm.jsp?no=${ requestScope.board.no } '/> "> 삭제하기 </a>
-	<a href="<c:url value='/BoardServlet?cmd=CMD_UPDATE_FROM&no=${ requestScope.board.no } '/> "> 수정하기 </a>
-	
+	<a href="<c:url value='/board/delete-confirm.jsp?no=${ requestScope.board.no }' />">
+		삭제하기
+	</a>
+	<a href="<c:url value='/BoardServlet?cmd=CMD_UPDATE_FORM&no=${ requestScope.board.no }'/>">
+		수정하기
+	</a>
 </body>
 </html>
+
+
+
+
+
+
+

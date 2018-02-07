@@ -1,4 +1,4 @@
-package com.koitt.board.model;
+package com.koitt.board.model.board;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.koitt.board.dao.BoardDao;
+import com.koitt.board.model.Command;
 import com.koitt.board.vo.Board;
 
 /*

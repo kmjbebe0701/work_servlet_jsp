@@ -15,4 +15,34 @@
 		<servlet-name>BoardServlet</servlet-name>
 		<url-pattern>/BoardServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UsersServlet</servlet-name>
+		<servlet-class>com.koitt.board.controller.UsersServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UsersServlet</servlet-name>
+		<url-pattern>/UsersServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 필터 등록 -->
+	<!-- 필터 이름과 필터의 클래스를 연결 -->
+	<filter>
+		<filter-name>LoginCheckFilter</filter-name>
+		<filter-class>com.koitt.board.filter.LoginCheckFilter</filter-class>
+	</filter>
+	
+	<!-- 필터 이름과 필터가 적용될 경로를 연결 (/board/*: board 아래 모든 페이지는 필터 적용)-->
+	<filter-mapping>
+		<filter-name>LoginCheckFilter</filter-name>
+		<url-pattern>/board/*</url-pattern>
+		<url-pattern>/BoardServet/*</url-pattern>
+	</filter-mapping>
+	
 </web-app>
+
+
+
+
+
