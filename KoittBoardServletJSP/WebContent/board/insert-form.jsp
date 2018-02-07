@@ -10,8 +10,9 @@
 	<!-- HTTP Method 중 post 방식으로 BoardServlet에 정보를 전달 (쿼리문자열을 사용할 수 없음) -->
 	<form action="<c:url value='/BoardServlet' />" method="post">	<!-- insert에 해당하는 HTTP Method는 post -->
 		<input type="hidden" name="cmd" value="CMD_INSERT">
+		<input type="hidden" name="email" value="${ sessionScope.email }">
 		<label>제목 : <input type="text" name="title"></label><br>
-		<label>작성자 : <input type="text" name="writer"></label><br>
+		<div>작성자 : ${ sessionScope.email }</div><br>
 		<label>내용 : </label><textarea rows="3" cols="50" name="content"></textarea><br>
 		<input type="submit" value="글 등록">
 	</form>

@@ -31,7 +31,7 @@ public class LoginCommand implements Command {
 		// 5. 일치한다면 세션에 현재 로그인한 사용자의 이메일을 저장
 		if (matches) {
 			// 세션에 이메일 값을 저장하기 위해 세션 객체를 가져온다.
-			HttpSession session = req.getSession();
+			HttpSession session = req.getSession(true);
 			
 			/*
 			 *  현재 로그인한 사용자의 email값이 세션에 존재한다면

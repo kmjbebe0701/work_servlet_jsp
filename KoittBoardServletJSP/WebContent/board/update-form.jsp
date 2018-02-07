@@ -13,7 +13,7 @@
 		<input type="hidden" name="no" value="${ requestScope.board.no }">
 		<div>번호 : ${ requestScope.board.no }</div>
 		<label>제목 : <input type="text" name="title" value="${ requestScope.board.title }"></label><br>
-		<div>작성자 : ${ requestScope.board.writer }</div><br>
+		<div>작성자 : ${ requestScope.board.users.email }</div><br>
 		<label>내용 : </label>
 		<textarea rows="3" cols="50" name="content">${ requestScope.board.content }</textarea>
 		<br>

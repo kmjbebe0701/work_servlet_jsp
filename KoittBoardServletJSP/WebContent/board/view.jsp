@@ -20,7 +20,7 @@
 			</tr>
 			<tr>
 				<th>작성자</th>
-				<td>${ requestScope.board.writer }</td>
+				<td>${ requestScope.board.users.email }</td>
 			</tr>
 			<tr>
 				<th>작성일</th>

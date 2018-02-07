@@ -29,7 +29,7 @@
 							${ board.title }
 						</a>
 					</td>
-					<td>${ board.writer }</td>
+					<td>${ board.users.email }</td>
 					<td>${ board.regdate }</td>
 				</tr>
 			</c:forEach>

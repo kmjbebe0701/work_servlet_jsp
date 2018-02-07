@@ -1,14 +1,20 @@
 package com.koitt.board.vo;
 
 import java.io.Serializable;
+import java.util.List;
 
 // Java bean
 public class Users implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private Integer no;			// 회원번호
-	private String email;		// 이메일 (아이디 용도)
-	private String password;	// 비밀번호
-	private String name;		// 이름
+	private Integer no;				// 회원번호
+	private String email;			// 이메일 (아이디 용도)
+	private String password;		// 비밀번호
+	private String name;			// 이름
+	private List<Board> boardList;	// 해당 사용자의 게시물 목록
+	/*
+	 * 사용자 한명은 게시물을 여러개 가질 수 있는 일대다(1:N) 관계이므로
+	 * 위와 같이 List로 필드를 표현한다.
+	 */
 	
 	// 1. 기본생성자
 	public Users() {}
@@ -54,11 +60,20 @@ public class Users implements Serializable {
 		this.name = name;
 	}
 
+	public List<Board> getBoardList() {
+		return boardList;
+	}
+
+	public void setBoardList(List<Board> boardList) {
+		this.boardList = boardList;
+	}
+
 	// 4. equals, hashCode 작성
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((boardList == null) ? 0 : boardList.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((no == null) ? 0 : no.hashCode());
@@ -99,6 +114,8 @@ public class Users implements Serializable {
 		builder.append(password);
 		builder.append(", name=");
 		builder.append(name);
+		builder.append(", boardList=");
+		builder.append(boardList);
 		builder.append("]");
 		return builder.toString();
 	}

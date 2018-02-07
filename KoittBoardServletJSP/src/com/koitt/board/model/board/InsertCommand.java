@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.koitt.board.dao.BoardDao;
+import com.koitt.board.dao.UsersDao;
 import com.koitt.board.model.Command;
 import com.koitt.board.vo.Board;
+import com.koitt.board.vo.Users;
 
 public class InsertCommand implements Command {
 
@@ -19,7 +21,12 @@ public class InsertCommand implements Command {
 		// 2. 클라이언트로부터 전달받은 값을 변수에 저장
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
-		String writer = req.getParameter("writer");
+		String email = req.getParameter("email");
+		
+		// 2-1. email 값을 이용하여 해당 사용자의 번호를 가져온다.
+		UsersDao usersDao = new UsersDao();
+		Users users = usersDao.select(email);
+		Integer userNo = users.getNo();
 		
 		// 3. insert로 전달할 Board 객체 생성
 		Board board = new Board();
@@ -27,7 +34,7 @@ public class InsertCommand implements Command {
 		// 4. 2번에서 저장한 변수를 board 객체에 저장
 		board.setTitle(title);
 		board.setContent(content);
-		board.setWriter(writer);
+		board.setUserNo(userNo);
 		
 		// 5. 4번에서 만든 객체를 Dao로 전달하기 위해 BoardDao 객체 생성
 		BoardDao dao = new BoardDao();
